@@ -1,4 +1,4 @@
-package com.michaelgerullis.sslcertificatechecker;
+package com.michaelgerullis.certificatechecker;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -10,7 +10,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "SSLCertificateChecker")
 public class SSLCertificateCheckerPlugin extends Plugin {
 
-    private SSLCertificateChecker implementation = new SSLCertificateChecker();
+    private final SSLCertificateChecker implementation = new SSLCertificateChecker();
 
     @PluginMethod
     public void checkCertificate(PluginCall call) {

@@ -1,6 +1,6 @@
 // android/src/main/java/com/your/plugin/CapacitorSslPinning.java
 
-package com.michaelgerullis.sslcertificatechecker;
+package com.michaelgerullis.certificatechecker;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -13,6 +13,8 @@ import java.security.MessageDigest;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.Objects;
+
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -26,9 +28,9 @@ public class SSLCertificateChecker extends Plugin {
     @PluginMethod
     public void checkCertificate(PluginCall call) {
         String url = call.getString("url");
-        String expectedFingerprint = call.getString("fingerprint").replace(":", "");
+        String expectedFingerprint = Objects.requireNonNull(call.getString("fingerprint")).replace(":", "");
         
-        if (url == null || expectedFingerprint == null) {
+        if (url == null) {
             call.reject("URL and fingerprint are required");
             return;
         }
@@ -44,8 +46,7 @@ public class SSLCertificateChecker extends Plugin {
             String actualFingerprint = getFingerprint(cert);
             
             JSObject result = new JSObject();
-            if (cert instanceof X509Certificate) {
-                X509Certificate x509cert = (X509Certificate) cert;
+            if (cert instanceof X509Certificate x509cert) {
                 result.put("subject", x509cert.getSubjectX500Principal().getName());
                 result.put("issuer", x509cert.getIssuerX500Principal().getName());
                 result.put("validFrom", x509cert.getNotBefore().toString());
