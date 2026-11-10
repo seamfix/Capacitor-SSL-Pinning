@@ -1,6 +1,6 @@
 {
   "name": "capacitor-ssl-pinning",
-  "version": "1.0.0",
+  "version": "2.0.0-rc.1",
   "description": "Check/pin SSL certificates",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -59,11 +59,11 @@
     "postinstall": "node scripts/chmod.js"
   },
   "devDependencies": {
-    "@capacitor/android": "^7.0.0",
-    "@capacitor/cli": "^7.0.0",
-    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/cli": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
     "@capacitor/docgen": "^0.3.0",
-    "@capacitor/ios": "^7.0.0",
+    "@capacitor/ios": "^8.0.0",
     "@ionic/eslint-config": "^0.4.0",
     "@ionic/prettier-config": "^4.0.0",
     "@ionic/swiftlint-config": "^2.0.0",
@@ -78,7 +78,7 @@
     "yargs": "^17.7.2"
   },
   "peerDependencies": {
-    "@capacitor/core": ">=7.0.0"
+    "@capacitor/core": ">=8.0.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
