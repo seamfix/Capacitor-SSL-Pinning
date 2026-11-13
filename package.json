@@ -1,6 +1,6 @@
 {
   "name": "capacitor-ssl-pinning",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.2",
   "description": "Check/pin SSL certificates",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -13,7 +13,6 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapacitorSslPinning.podspec",
     "bin/",
     "scripts/"
   ],
